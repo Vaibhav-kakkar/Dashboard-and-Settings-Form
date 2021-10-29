@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="sidebar-brand">
+            <h1>
+                <span></span>Kaboodle
+            </h1>
+        </div>
+        <div class="sidebar-menu col-sm-">
+            <ul>
+                <li>
+                    <a href="index.html"><span class="las la-home"></span>
+                <span>Dashboard</span></a>
+                </li>
+                <li>
+                    <a href=""><span class="las la-book-open"></span>
+                <span>Select Chapter</span></a>
+                </li>
+                <li>
+                    <a href=""><span class="las la-book"></span>
+                <span>My Class</span></a>
+                </li>
+                <li>
+                    <a href=""><span class="las la-pen"></span>
+                <span>Class Forum</span></a>
+                </li>
+                <li>
+                    <a href=""><span class="las la-chart-bar"></span>
+                <span>My progress</span></a>
+                </li>
+                <li>
+                    <a href=""><span class="las la-book"></span>
+                <span>My Diary</span></a>
+                </li>
+                <li>
+                    <a href="settings.html" class="active"><span class="las la-cog"></span>
+                <span>Settings</span></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="main-content">
+        <header>
+            <h2>Settings
+            </h2>
+                
+            <div class="user-wrapper">
+                <span class="las la-flag flag"></span>
+                <span class="las la-bell flag"></span>
+                <img src="images/Ellipse 1.png" width="70px" height="80px" alt="">
+                    <span>Akansha Singh</span>
+            </div>
+        </header>
+
+        <main>
+            <div class="col-12 col-md-12">
+                <form id="myForm">
+                    <div class="form-group row">
+                        <div class="col-md-2">
+                        <img src="images/Ellipse 1.png" width="100px" height="80px" alt="user">
+                        <a class="pic" href="#">Change Picture</a>
+                        </div>
+
+                        <label for="firstname" class="col-md-1 col-form-label">FirstName:</label>
+                        <div class="col-md-2">
+                            <input type="text" class="form-control" id="firstname" name="firstname" required
+                                placeholder="Enter First Name">
+                        </div>
+                        
+                            <label for="birthdate" class="col-md-1 col-form-label">Birthday:</label>
+                            <div class="col-md-2">
+                            <input type="date" class="form-control" required>
+                        </div>
+                    </div>
+
+                    <div class=" row">
+                        <label for="lastname" class="col-md-1 col-form-label offset-md-2">LastName:</label>
+                        <div class="col-md-2">
+                            <input type="text" class="form-control" id="lastname" name="lastname" required
+                                placeholder="Enter Last Name">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="contact" class="col-12 col-md-1 col-form-label">Contact:</label>
+                        <div class="col-5 col-md-4">
+                            <input type="tel" class="form-control" id="contact" name="contact"
+                                placeholder="Contact No." required
+                                pattern="^\d{10}$"
+                                onkeyup="number()">
+
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="email" class="col-md-1 col-form-label">Email:</label>
+                        <div class="col-md-4">
+                            <input type="email" class="form-control" id="email" name="email" pattern="/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/" required
+                                placeholder="Enter Email id">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="email" class="col-md-1 col-form-label">Old Password:</label>
+                        <div class="col-md-4">
+                            <input type="password" class="form-control" id="oldPassword" name="oldPassword" required
+                                placeholder="Enter Old Password">
+                                
+                            <i class="las la-eye" id="togglePassword" style="cursor: pointer;"></i>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="email" class="col-md-1 col-form-label">New Password:</label>
+                        <div class="col-md-4">
+                            <input type="password" class="form-control" id="password" name="password" required
+                            placeholder="Enter New Password">
+
+                            <i class="las la-eye" id="togglePassword1" style=" cursor: pointer;"></i>
+                        </div>
+
+                    </div>
+                    <div class="form-group row">
+                        <label for="email" class="col-md-1 col-form-label">Confirm Password:</label>
+                        <div class="col-md-4">
+                            <input type="password" class="form-control" id="confirmPassword" name="confirmPassword"
+                                placeholder="Confirm Password" required onkeyup="check(this)">
+                                <error id="alert" style="color:red"></error>
+                        </div>
+
+                    </div>
+                    <div class="form-group row">
+                        <div class="offset-md-4 col-md-2">
+                            <button type="submit" class="btn btn-primary">
+                                Apply
+                            </button>
+                        </div>   
+                        <div class="col-md-2">
+                            <button type="submit" class="btn btn-secondary" onclick="clear()">
+                                Cancel
+                            </button>
+                        </div>   
+                    </div>
+                    
+                    
+                </form>
+            </div>
+        </main>
+    </div>
+    
+</body>
+<script type="text/javascript">
+
+    const myForm = document.getElementById('#myForm');
+    function clear(){
+        myForm.reset();
+    }
+
+    const oldPassword = document.getElementById('oldPassword');
+    const password = document.getElementById('password');
+
+    function check(e){
+        if(e.value.length > 0){
+            if(e.value != password.value){
+                document.getElementById('alert').innerHTML = "Password does not match";
+            }else{
+                document.getElementById('alert').innerText = "";
+            }
+        }else{
+            document.getElementById('alert').innerText = "Please Enter Confirm Password"
+        }
+    }
+
+    const togglePassword = document.querySelector('#togglePassword');
+    togglePassword.addEventListener('click', function(e) {
+        const type = oldPassword.getAttribute('type') === 'password' ? 'text' : 'password';
+        oldPassword.setAttribute('type', type);
+        this.classList.toggle('la-eye-slash');
+    });
+
+    const togglePassword1 = document.querySelector('#togglePassword1');
+    togglePassword1.addEventListener('click', function(e) {
+        const type1 = password.getAttribute('type') === 'password' ? 'text' : 'password';
+        password.setAttribute('type', type1);
+        this.classList.toggle('la-eye-slash');
+    });
+
+    </script>
+</html>
